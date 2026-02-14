@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080, initial-scale=1.0" />
+    <title>Memento Mori — Interactive</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Background gradient element -->
+    <div class="background-gradient"></div>
+
+    <!-- Main Container -->
+    <div id="app" class="app">
+        <!-- Clock Section -->
+        <div id="clock-container" class="clock-container">
+            <div id="clock" class="clock" aria-label="Current time">00:00</div>
+            <div id="date-display" class="date-display"></div>
+        </div>
+
+        <!-- Calendar Grid -->
+        <canvas id="calendar-canvas"></canvas>
+
+        <!-- Footer -->
+        <div class="motto" id="motto">MEMENTO MORI</div>
+    </div>
+
+    <!-- Settings Button -->
+    <button id="settings-toggle" class="settings-toggle" aria-label="Open Settings">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+            </path>
+        </svg>
+    </button>
+
+    <!-- Customization Panel -->
+    <div id="settings-panel" class="settings-panel hidden">
+        <div class="settings-header">
+            <h2>Customization</h2>
+            <button id="settings-close" class="settings-close">&times;</button>
+        </div>
+
+        <div class="setting-group">
+            <label>Theme</label>
+            <div class="toggle-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+                <span class="label-text">Dark / Light</span>
+            </div>
+        </div>
+
+        <div class="setting-group">
+            <label>Accent Color</label>
+            <input type="color" id="accent-color" value="#f28c38">
+        </div>
+
+        <div class="setting-group">
+            <label>Dot Size</label>
+            <input type="range" id="dot-size" min="2" max="8" step="0.5" value="3.5">
+        </div>
+
+        <div class="setting-group">
+            <label>Glow Animation</label>
+            <div class="toggle-switch">
+                <input type="checkbox" id="glow-toggle" checked>
+                <span class="slider"></span>
+            </div>
+        </div>
+
+        <div class="setting-group">
+            <label>Show Clock</label>
+            <div class="toggle-switch">
+                <input type="checkbox" id="clock-toggle" checked>
+                <span class="slider"></span>
+            </div>
+        </div>
+
+        <div class="settings-footer">
+            <button id="reset-settings">Reset Defaults</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
